@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이웨딩</title>
+    <link rel="shortcut icon" href="./images/loge.jpg" type="image/x-icon">
+
+    <link rel="stylesheet" href="./lib/css/reset.css">
+    <link rel="stylesheet" href="./lib/css/fonts.css">
+    <link rel="stylesheet" href="./lib/css/base.css">
+
+    <link rel="stylesheet" href="./lib/css/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./lib/js/jquery-1.12.4.js"></script>
+    <script src="./lib/js/swiper-bundle.min.js"></script>
+
+    <script src="./js/custom.js"></script>
+
+
+    <style>
+        .header .mbtn {
+            display: none;
+        }
+
+        @media (max-width:768px) {
+            .header .mbtn {
+                display: none;
+            }
+
+            .header .mbtn {
+                /* r */
+                display: block;
+                position: fixed;
+                right: 16px;
+                top: 64px;
+                z-index: 999;
+
+                width: 32px;
+                height: 32px;
+                background: #fff;
+                border: 1px solid #ddd;
+
+            }
+
+            /* r */
+            .header .mbtn::before {
+                content: "";
+                position: absolute;
+                top: 8px;
+                left: 4px;
+                right: 4px;
+
+                height: 2px;
+                background: #333;
+            }
+
+            .header .mbtn.on::before {
+                display: none;
+            }
+
+            /* r */
+            .header .mbtn::after {
+                content: "";
+                position: absolute;
+                bottom: 8px;
+                left: 4px;
+                right: 4px;
+
+                height: 2px;
+                background: #333;
+            }
+
+            .header .mbtn.on::after {
+                display: none;
+            }
+
+            .header .mbtn span::before {
+                content: "";
+                position: absolute;
+                top: 14px;
+                left: 4px;
+                right: 4px;
+
+                height: 2px;
+                background: #333;
+            }
+
+            .header .mbtn.on span::before {
+                transform: rotate(45deg);
+            }
+
+            .header .mbtn span::after {
+                content: "";
+                position: absolute;
+                top: 14px;
+                left: 4px;
+                right: 4px;
+
+                height: 2px;
+                background: #333;
+            }
+
+            .header .mbtn.on span::after {
+                transform: rotate(-45deg);
+            }
+        }
+
+        .main_news {}
+
+        .main_news .inner {
+            display: flex;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px 30px;
+        }
+
+        .main_news .itm figure {
+            margin-bottom: 0.8rem;
+
+
+        }
+
+        .main_news .itm img {
+            width: 100%;
+            margin-bottom: 0.8rem;
+            object-fit: cover;
+
+        }
+
+        .main_news h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 500;
+            text-shadow: 0px 0px 10px red;
+        }
+
+        .main_news p {
+            text-align: center;
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+
+        .main_news .itm p {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        @media (max-width:768px) {
+            .main_news {}
+
+            .main_news .inner {
+                display: flex;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 60px 30px;
+            }
+
+            .main_news .itm figure {
+                margin-bottom: 0.8rem;
+
+
+            }
+
+
+
+            .main_news .itm img {
+                width: 100%;
+                margin-bottom: 0.8rem;
+                object-fit: cover;
+
+                /*  */
+                flex-direction: column;
+
+            }
+
+            .main_news h2 {
+                text-align: center;
+                font-size: 32px;
+                font-weight: 500;
+                text-shadow: 0px 0px 10px red;
+            }
+
+            .main_news p {
+                text-align: center;
+                margin-top: 16px;
+                margin-bottom: 24px;
+            }
+
+            .main_news .itm p {
+                text-align: center;
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+
+
+        .main_concept {}
+
+        .main_concept .inner {
+            display: flex;
+            text-align: center;
+            gap: 8px;
+        }
+
+        .main_concept .inner>* {
+            flex: 1;
+
+            border-top: 1px solid #e29f8a;
+            padding-top: 32px;
+        }
+
+        .main_concept .itm {
+            position: relative;
+        }
+
+        .main_concept .itm h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 2.4rem;
+        }
+
+
+        .main_concept .itm::after {
+            content: "";
+            position: absolute;
+            top: 2.4rem;
+            right: 0;
+
+            width: 100px;
+            height: 100px;
+
+        }
+
+        @media (max-width:768px) {
+            .main_concept {}
+
+            .main_concept .inner {
+                display: flex;
+                text-align: center;
+                gap: 8px;
+            }
+
+            .main_concept .inner>* {
+                flex: 1;
+
+                border-top: 1px solid #e29f8a;
+                padding-top: 32px;
+            }
+
+            .main_concept .itm {
+                position: relative;
+
+
+            }
+
+            .main_concept .itm h3 {
+                font-size: 1.6rem;
+                font-weight: 700;
+                margin-bottom: 2.4rem;
+            }
+
+
+            .main_concept .itm::after {
+                content: "";
+                position: absolute;
+                top: 2.4rem;
+                right: 0;
+
+                width: 100px;
+                height: 100px;
+
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="hd_top">
+            <div class="inner">
+                <p>스마트한 결혼준비 국내 NO.1 웨딩 필수 플랫폼.</p>
+                <a href="/adm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#333"
+                        stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-pause">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="hd_bottom">
+            <div class="inner hd_wrap">
+                <h1><a href="/"><img src="./images/logo.jpg" alt="스마트웨딩"></a></h1>
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="">아이웨딩</a>
+                            <ul>
+                                <li><a href="">아이웨딩 소개</a></li>
+                                <li><a href="">비용비교</a></li>
+                                <li><a href="">에약문의</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">한복</a>
+                            <ul>
+                                <li><a href="">맞춤</a></li>
+                                <li><a href="">대여</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">뷰티케어</a>
+                            <ul>
+                                <li><a href="">경락</a></li>
+                                <li><a href="">스킨케어</a></li>
+                                <li><a href="">아로마케어</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">답례품</a></li>
+                        <li><a href="">청첩장</a></li>
+                    </ul>
+                </nav>
+                <button class="mbtn">
+                    menu
+                </button>
+            </div>
+        </div>
+
+
+    </header>
+    <main id="content" class="subpage">
+        <div class="page">
+            <div class="inner">
+                <span>아이웨딩</span>
+                <strong>스마트한 결혼준비 국내 NO.1 웨딩 필수 플랫폼</strong>
+            </div>
+        </div>
+        <div class="inner sub_wrap">
+            <article class="content">
+                <h2>아이웨딩<span>비용비교</span></h2>
+
+                <div class="title" style="background: url(./images/main_slider02.jpg)no-repeat right top/cover;">
+                    <div class="txt_box">
+                        <img src="./images/logo.jpg" alt="">
+                        <p>
+                            인기웨딩홀, 하우스웨딩 장소나 준비 팁, 채플웨딩장소 추천,
+                        </p>
+                        <p>
+                            교통이 편리한 웨딩홀, 야외예식, 종교예식 웨딩홀<br>
+                            음식이 맛있는 웨딩홀 등 웨딩홀에 관한 모든것!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="desc">
+                    <strong>iwedding 비용비교 / 문의</strong>
+                    <p>
+                        스드메 셀프 견적 계산기. 견적을 확인하고 싶은 업체를 선택해 주세요. 스드메 견적을 간편하게 확인할 수 있어요.
+                    </p>
+                    <p>
+                        내가 원하는 웨딩홀을 무료로 누구보다 빠르게!, 최대 할인가, 아이웨딩 특전 혜택으로 간편하게 에약해 해보세요.
+                    </p>
+                    <div class="cm">(주)아이패밀리SC</div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <section class="main_news default bg">
+        <div class="title">
+            <h2 class="en_font">iwedding</h2>
+            <p class="desc">[100만원대] 스드메 패키지</p>
+        </div>
+
+        <div class="inner">
+            <a href="" class="itm">
+                <figure>
+                    <img src="./images/main_news01.jpg" alt="">
+                </figure>
+                <p>[촬영+본식] ST정우_러블리(토탈)+아르비체by라리앨리스+앤드뮤</p>
+                <p>40% 2,030,000원</p>
+            </a>
+            <a href="" class="itm">
+                <figure>
+                    <img src="./images/main_news02.jpg" alt="">
+                </figure>
+                <p>[촬영+본식] 스튜디오바시움+컬렉트비+유림메이크업앤헤어</p>
+                <p>45% 2,480,000원</p>
+            </a>
+            <a href="" class="itm">
+                <figure>
+                    <img src="./images/main_news03.jpg" alt="">
+                </figure>
+                <p>[촬영+본식] 온뜰에피움스튜디오+펠리스노비아+제이와이</p>
+                <p>21% 2,460,000원</p>
+            </a>
+            <a href="" class="itm">
+                <figure>
+                    <img src="./images/main_news04.jpg" alt="">
+                </figure>
+                <p>한정수량/라망스튜디오(토탈)+제이드블랑+고센&끌림뷰티</p>
+                <p>12% 2,185,000원</p>
+            </a>
+            <a href="" class="itm">
+                <figure>
+                    <img src="./images/main_news05.jpg" alt="">
+                </figure>
+                <p>[촬영+본식] 원규스튜디오(토탈)+리안마리+헤움_서울점</p>
+                <p>34% 2,370,000원</p>
+            </a>
+        </div>
+    </section>
+    <section class="main_concept default">
+        <h2 class="blind">main concept</h2>
+        <div class="inner">
+            <a href="" class="itm icon01">
+                <h3 class="en_font">Innovator</h3>
+                <p>
+                    (주)아이패밀리SC는 ‘결혼예식 상품 관리 방법 및 시스템<br>
+                    업계최초 비즈니스 모델 특허를 취득한 기업입니다.
+                </p>
+            </a>
+            <a href="" class="itm icon02">
+                <h3 class="en_font">Platform & Service</h3>
+                <p>
+                    웨딩 산업의 가격 불투명성, 일정치 않은 서비스 품질 등 고질적인 병폐를 해소하기 위해<br>
+                    정찰제와 서비스 보증제를 협력업체들을 설득하여 시행하였습니다.
+                </p>
+            </a>
+            <a href="" class="itm  icon03">
+                <h3 class="en_font">Key to Technology</h3>
+                <p>
+                    '온라인 웨딩서비스 사업' 비즈니스
+                    결혼예식 상품 관리 방법 및 시스템 (동종 업계 유일) 출원일 2014.02.27<br>
+                    현장 서비스 제어기술
+                    일정 단위 기반의 서비스 주관 시스템 및 방법 출원일 2008.10.29
+                </p>
+
+            </a>
+        </div>
+    </section>
+    </main>
+    <footer class="footer">
+        <div class="inner">
+            <div class="sns">
+                <a href="" target="blank">
+                    <img src="./images/camera.svg" alt="">
+                </a>
+                <a href="" target="blank">
+                    <img src="./images/instagram.svg" alt="">
+                </a>
+                <a href="" target="blank">
+                    <img src="./images/droplet.svg" alt="">
+                </a>
+            </div>
+            <ul class="customer">
+                <li><a href="">아이웨딩</a></li>
+                <li><a href="" class="b">개인정보처리방침</a></li>
+                <li><a href="">웨딩홀 예약</a></li>
+                <li><a href="">문의사항</a></li>
+            </ul>
+            <div class="info">
+                <ul>
+                    <li>(05804)서울시 송파구 동남로 122(문정동) COLLECTED 빌딩</li>
+                </ul>
+            </div>
+            <address>
+                &copy;iweddingplus@iwedding.co.kr
+            </address>
+        </div>
+    </footer>
+
+</body>
+
+</html>

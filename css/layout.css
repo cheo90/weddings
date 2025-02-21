@@ -1,0 +1,17 @@
+:root {
+    --line-color: #f1f1f1;
+}
+
+body {
+    color: #333;
+}
+
+.inner {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+
+.default {
+    padding: 80px;
+}
